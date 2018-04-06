@@ -1,0 +1,13 @@
+select * from member_tbl where USER_ID = '123';
+
+create table test(
+	id varchar2(20) primary key,
+	user_name varchar2(100) not null,
+	user_pw varchar2(20) not null,
+	amount number(6) not null
+);
+insert into test(id,user_name,user_pw,amount)
+values ('user','admin','1234',30000);
+select *from test;
+
+select * from member_tbl;
