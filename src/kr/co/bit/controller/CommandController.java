@@ -69,8 +69,9 @@ public class CommandController extends HttpServlet {
 		} else if (cmd.equals("viewRegist")) {
 			url = "./mvc/regist_member.jsp";
 
-		} else if (cmd.equals("search.jsp")) {
+		} else if (cmd.equals("search")) {
 			url = "./mvc/search.jsp";
+			request.setAttribute("id", request.getParameter("id")); 
 		}
 
 		RequestDispatcher rd = request.getRequestDispatcher(url);

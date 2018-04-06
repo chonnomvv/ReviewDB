@@ -109,7 +109,7 @@ public class MemberDAO {
 	public ArrayList<MemberVO> search(String id) {
 
 		ArrayList<MemberVO> list = null;
-
+		
 		ConnectionManager mgr = new ConnectionManager();
 		Connection conn = mgr.getConnection(); // 코드가 지나가는 길
 
@@ -118,7 +118,7 @@ public class MemberDAO {
 		try {
 			stmt = conn.createStatement(); // 쿼리를 보내는 것
 		
-			String sql = "select * from member_tbl where "+ id; // 통로로 보내는 쿼리
+			String sql = "select * from member_tbl where user_id ='"+ id+"'"; // 통로로 보내는 쿼리
 			ResultSet rs = stmt.executeQuery(sql); // 통로를 통해 결과 요청하고 받는 라인
 			list = new ArrayList();
 			MemberVO dao = null;

@@ -1,3 +1,5 @@
+<%@page import="kr.co.bit.vo.MemberVO"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="kr.co.bit.dao.MemberDAO"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
@@ -15,12 +17,12 @@
 
 <%
 	
-	String id = request.getParameter("id");
+	String id = (String)request.getAttribute("id");
 	MemberDAO dao = new MemberDAO();
 	
-	dao.search(id);
+	ArrayList<MemberVO> list = dao.search(id);
 	
-	out.print(dao.search(id).get(1));
+	out.print(list.get(0).getId());
 	
 	
 %>
