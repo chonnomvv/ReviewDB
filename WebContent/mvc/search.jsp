@@ -14,8 +14,10 @@
 <body>
 
 <%
+	
 	String id = request.getParameter("id");
 	MemberDAO dao = new MemberDAO();
+	
 	dao.search(id);
 	
 	out.print(dao.search(id).get(1));
